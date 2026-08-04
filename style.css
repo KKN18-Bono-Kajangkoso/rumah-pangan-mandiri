@@ -655,15 +655,15 @@ footer a:hover {
     .contact-icon {
         width: 42px;
         height: 42px;
-        font-size: 0.95rem;
+        font-size: 0.7rem;
     }
         a.fw-semibold {
-        font-size: 0.6rem; /* sekitar 13.6px */
+        font-size: 0.7rem; /* sekitar 13.6px */
     }
         .instagram-link {
-        font-size: 0.8rem; /* 12.8px */
+        font-size: 0.7rem; /* 12.8px */
     }
         .instagram-link {
-        font-size: 0.75rem; /* 12px */
+        font-size: 0.7rem; /* 12px */
     }
 }
