@@ -428,6 +428,10 @@ footer a:hover {
     color: #20c997 !important;
 }
 
+.instagram-link {
+    font-size: 1rem;
+}
+
 /* ==========================================================================
    11. RESPONSIVE BREAKPOINTS (PC, Laptop, iPad, Android & iPhone)
    ========================================================================== */
@@ -655,5 +659,11 @@ footer a:hover {
     }
         a.fw-semibold {
         font-size: 0.6rem; /* sekitar 13.6px */
+    }
+        .instagram-link {
+        font-size: 0.8rem; /* 12.8px */
+    }
+        .instagram-link {
+        font-size: 0.75rem; /* 12px */
     }
 }
