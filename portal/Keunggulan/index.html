@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portal Keunggulan & Pengelola Modal - Sistem Pertanian Terpadu</title>
+  <style>
+    /* =====================================================
+       RESET
+    ===================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    /* =====================================================
+       SLIDER
+    ===================================================== */
+    .slider {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition:
+        transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    /* =====================================================
+       SLIDE
+    ===================================================== */
+    .slide {
+      width: 100vw;
+      min-width: 100vw;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    /* =====================================================
+       BACKGROUND SETIAP SLIDE
+    ===================================================== */
+    .slide:nth-child(1) {
+      background-image: url("img/fn.jpg");
+    }
+
+    .slide:nth-child(2) {
+      background-image: url("img/kg.jpg");
+    }
+
+    .slide:nth-child(3) {
+      background-image: url("img/fn1.jpg");
+    }
+
+    .slide:nth-child(4) {
+      background-image: url("img/pr.png");
+    }
+
+    .slide:nth-child(5) {
+      background-image: url("img/pr.png");
+    }
+
+    .slide:nth-child(6) {
+      background-image: url("img/pr1.jpg");
+    }
+
+    .slide:nth-child(7) {
+      background-image: url("img/an.jpg");
+    }
+
+    .slide:nth-child(8) {
+      background-image: url("img/st.jpg");
+    }
+
+    /* =====================================================
+       OVERLAY
+    ===================================================== */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.90) 0%,
+          rgba(0, 0, 0, 0.904) 40%,
+          rgba(0, 0, 0, 0.747) 70%,
+          rgba(0, 0, 0, 0.562) 100%
+        );
+      z-index: 1;
+    }
+
+    /* =====================================================
+       EFEK BACKGROUND
+    ===================================================== */
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: -20px;
+      background: inherit;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      z-index: 0;
+    }
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+    .content {
+      position: relative;
+      z-index: 2;
+      width: min(850px, 82%);
+      margin-left: 8%;
+      padding: 30px 0;
+      animation: contentIn 0.8s ease;
+    }
+
+    @keyframes contentIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* =====================================================
+       NOMOR
+    ===================================================== */
+    .number {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffd166;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      padding-left: 12px;
+      border-left:
+        3px solid #ffd166;
+    }
+
+    /* =====================================================
+       JUDUL
+    ===================================================== */
+    .content h1 {
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.12;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* =====================================================
+       SUB JUDUL
+    ===================================================== */
+    .content h2 {
+      font-size: clamp(19px, 2.5vw, 28px);
+      line-height: 1.4;
+      color: #ffd166;
+      margin-bottom: 20px;
+    }
+
+    /* =====================================================
+       PARAGRAF
+    ===================================================== */
+    .content p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #f5f5f5;
+      margin-bottom: 15px;
+    }
+
+    /* =====================================================
+       TEXT PANJANG
+    ===================================================== */
+    .description {
+      display: block;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #eeeeee;
+      max-width: 800px;
+    }
+
+    /* =====================================================
+       TOMBOL
+    ===================================================== */
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(0px);
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .prev {
+      left: 25px;
+    }
+
+    .next {
+      right: 25px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background: #ffd166;
+      color: #111;
+      transform:
+        translateY(-50%)
+        scale(1.1);
+    }
+
+    /* =====================================================
+       DOTS
+    ===================================================== */
+    .dots {
+      position: absolute;
+      left: 50%;
+      bottom: 35px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      z-index: 10;
+      max-width: 90%;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot:hover {
+      background: white;
+    }
+
+    .dot.active {
+      width: 28px;
+      border-radius: 10px;
+      background: #ffd166;
+    }
+
+    /* =====================================================
+       PROGRESS BAR
+    ===================================================== */
+    .progress-container {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+      z-index: 20;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: #ffd166;
+      transition: width 0.1s linear;
+    }
+
+    .counter {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      z-index: 10;
+      font-size: 15px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .counter strong {
+      color: #ffd166;
+      font-size: 22px;
+    }
+
+    /* =====================================================
+       RESPONSIVE TABLET
+    ===================================================== */
+
+    @media (max-width: 900px) {
+      .content {
+        margin-left: 7%;
+        width: 80%;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+    }
+
+
+    /* =====================================================
+       RESPONSIVE HP
+    ===================================================== */
+
+    @media (max-width: 600px) {
+      .content {
+        width: 78%;
+        margin-left: 9%;
+        padding-bottom: 70px;
+      }
+
+      .content h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+
+      .content h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .content p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .description {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .prev,
+      .next {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+      }
+
+      .prev {
+        left: 12px;
+      }
+
+      .next {
+        right: 12px;
+      }
+
+      .counter {
+        top: 20px;
+        right: 20px;
+        font-size: 12px;
+      }
+
+      .counter strong {
+        font-size: 17px;
+      }
+
+      .dots {
+        bottom: 22px;
+        gap: 5px;
+      }
+
+      .dot {
+        width: 7px;
+        height: 7px;
+      }
+
+      .dot.active {
+        width: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <div class="slides" id="slides">
+
+      <!-- SLIDE 1 -->
+      <div class="slide">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="number">
+            Keunggulan 01
+          </div>
+          <h1>
+            “Efisiensi Biaya Melalui Pemanfaatan Limbah”
+          </h1>
+          <h2>
+            Sistem Pertanian Terpadu
+        </h2>
+          <span class="description">
+            Dapat membantu petani menghemat biaya produksi
+            karena limbah dari suatu kegiatan dapat dimanfaatkan kembali untuk kegiatan lainnya.
+            Sebagai contoh, kotoran ternak dapat diolah menjadi pupuk organik yang digunakan untuk
+            menyuburkan lahan pertanian.
+            <p></p>
+            Sementara itu, sisa tanaman seperti jerami, daun, atau hasil
+            samping pertanian dapat dimanfaatkan sebagai pakan ternak setelah melalui pengolahan yang
+            sesuai. Dengan adanya proses pemanfaatan kembali tersebut, petani tidak perlu terlalu
+            bergantung pada pembelian pupuk, pakan, atau bahan input lainnya dari luar. Artinya,
+            limbah yang sebelumnya dianggap tidak memiliki nilai ekonomi justru dapat menjadi sumber
+            daya yang bermanfaat. Kondisi ini pada akhirnya dapat menekan biaya produksi dan meningkatkan
+            efisiensi usaha tani.
+          </span>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="slide">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="number">
+            Keunggulan 02
+          </div>
+          <h1>
+            “Pertanian Ramah Lingkungan”
+          </h1>
+          <h2>
+            Pertanian Terpadu
+        </h2>
+          <span class="description">
+            Memiliki kelebihan dari sisi lingkungan karena dapat mengurangi
+            jumlah limbah pertanian dan peternakan yang dibuang ke lingkungan.
+            Limbah berupa sisa tanaman, kotoran ternak, maupun hasil samping kegiatan
+            pertanian dapat diolah dan dimanfaatkan kembali sehingga tidak langsung menjadi
+            sumber pencemaran.
+            <p></p>
+            Misalnya, kotoran ternak dapat diolah menjadi kompos atau pupuk
+            organik, sedangkan sisa tanaman dapat digunakan sebagai pakan ternak atau bahan organik
+            untuk memperbaiki kondisi tanah. Dengan demikian, sistem ini menerapkan prinsip penggunaan
+            dan daur ulang sumber daya sehingga jumlah limbah yang terbuang dapat ditekan. Pemanfaatan
+            limbah secara berkelanjutan juga dapat membantu menjaga kualitas tanah dan lingkungan di
+            sekitar lahan pertanian.
+          </span>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slide">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="number">
+            Keunggulan 03
+          </div>
+          <h1>
+            “Beragam Sumber Pendapatan”
+          </h1>
+          <h2>
+            Keunggulan lainnya
+        </h2>
+          <span class="description">
+            Petani tidak hanya bergantung pada satu jenis
+            usaha atau satu sumber pendapatan. Dalam sistem pertanian terpadu, pendapatan
+            dapat diperoleh dari berbagai komponen, seperti hasil tanaman pangan, hortikultura,
+            ternak, maupun produk olahan. Sebagai contoh, petani dapat memperoleh pendapatan dari
+            penjualan hasil panen, penjualan ternak atau produk ternak, serta penjualan produk olahan
+            seperti pupuk kompos, pakan olahan, atau makanan hasil pengolahan pertanian.
+            <p></p>
+            Diversifikasi tersebut penting karena kondisi pasar dan hasil produksi pertanian
+            sering mengalami perubahan. Apabila salah satu komoditas mengalami penurunan harga
+            atau produksi, petani masih memiliki sumber pendapatan lain. Dengan demikian, sistem
+            pertanian terpadu dapat membantu mengurangi risiko ekonomi sekaligus meningkatkan
+            peluang pendapatan rumah tangga petani.
+          </span>
+        </div>
+      </div>
+
+      <!-- SLIDE 4 -->
+      <div class="slide">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="number">
+            Keunggulan 04
+          </div>
+          <h1>
+            “Produksi Berkelanjutan dan Terintegrasi”
+        </h1>
+          <h2>
+            Produksi Dalam Sistem Pertanian Terpadu
+        </h2>
+          <span class="description">
+            Dapat berlangsung secara
+            lebih berkelanjutan karena setiap komponen dalam usaha tani memiliki
+            hubungan dan dapat saling mendukung. Tanaman dapat menyediakan bahan pakan
+            untuk ternak, sedangkan ternak menghasilkan kotoran yang dapat dimanfaatkan
+            sebagai pupuk untuk tanaman. Hasil samping dari kegiatan pengolahan juga dapat
+            dimanfaatkan kembali sebagai input bagi kegiatan lainnya.
+            <p></p>
+            Hubungan tersebut menciptakan
+            suatu siklus produksi yang lebih tertutup, sehingga ketergantungan terhadap input dari
+            luar dapat dikurangi. Selain memberikan manfaat ekonomi, pola seperti ini juga membantu
+            mempertahankan produktivitas lahan dalam jangka panjang. Oleh karena itu, integrasi antara
+            tanaman dan ternak dipandang sebagai salah satu pendekatan yang dapat mendukung pertanian
+            berkelanjutan.
+          </span>
+        </div>
+      </div>
+
+      <!-- SLIDE 5 -->
+      <div class="slide">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="number">
+            Keunggulan 05
+          </div>
+          <h1>
+            “Efisiensi Penggunaan Sumber Daya”
+          </h1>
+          <h2>
+            Sistem Pertanian Terpadu
+        </h2>
+          <span class="description">
+            Memungkinkan sumber daya yang tersedia dimanfaatkan
+            secara lebih efisien. Lahan dapat digunakan untuk berbagai kegiatan yang saling
+            berkaitan, misalnya sebagian lahan digunakan untuk tanaman pangan dan sebagian lainnya
+            untuk menyediakan hijauan pakan ternak. Air juga dapat dikelola untuk mendukung beberapa
+            kegiatan produksi secara bersamaan sesuai dengan kebutuhan dan kondisi lingkungan.
+            <p></p>
+            Dari sisi pakan, sisa hasil pertanian dapat dimanfaatkan sebagai bahan pakan ternak sehingga
+            mengurangi kebutuhan untuk membeli pakan dari luar. Begitu pula dengan pupuk, kotoran ternak
+            dapat dikembalikan ke lahan dalam bentuk pupuk organik. Dengan pemanfaatan sumber daya secara
+            berulang dan saling terhubung tersebut, produktivitas dapat ditingkatkan tanpa harus
+            terus-menerus menambah penggunaan sumber daya baru.
+          </span>
+        </div>
+      </div>
+
+      <!-- SLIDE 6 -->
+      <div class="slide">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="number">
+            Pengelolaan Modal 01
+        </div>
+          <h1>
+            “Perhitungan Modal Awal”
+          </h1>
+          <h2>
+            Setiap sumber daya dapat dimanfaatkan secara optimal
+          </h2>
+          <span class="description">
+            Sebelum memulai usaha pertanian, hal yang harus dilakukan
+            adalah menentukan modal awal yang dibutuhkan. Modal awal adalah uang
+            yang digunakan untuk membeli berbagai kebutuhan usaha, seperti bibit tanaman,
+            ternak, pakan, pupuk, obat-obatan, alat pertanian, pembuatan kandang, dan kebutuhan
+            lainnya. Besarnya modal tergantung pada jenis usaha dan skala usaha yang akan dijalankan.
+            <p></p>
+            Oleh karena itu, semua kebutuhan sebaiknya dihitung terlebih dahulu agar dapat diketahui
+            berapa modal yang harus disiapkan. Dalam pertanian terpadu, modal juga bisa lebih hemat
+            karena beberapa kebutuhan dapat diperoleh dari hasil usaha sendiri. Contohnya, kotoran
+            ternak dapat digunakan sebagai pupuk tanaman dan sisa tanaman dapat digunakan sebagai
+            pakan ternak. Dengan memanfaatkan sumber daya yang ada, biaya untuk membeli kebutuhan
+            dari luar dapat dikurangi.
+          </span>
+        </div>
+      </div>
+
+      <!-- SLIDE 7 -->
+      <div class="slide">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="number">
+            Pengelolaan Modal 02
+          </div>
+          <h1>
+            Analisis Kelayakan Usaha
+        </h1>
+          <h2>
+            Modal Awal
+        </h2>
+          <span class="description">
+            Setelah menentukan modal awal, langkah selanjutnya adalah
+            melihat apakah usaha tersebut layak untuk dijalankan atau tidak.
+            Analisis kelayakan usaha dilakukan dengan membandingkan antara biaya yang
+            dikeluarkan dengan pendapatan yang akan diperoleh. Biaya yang dikeluarkan misalnya
+            untuk membeli bibit, pakan, pupuk, obat-obatan, tenaga kerja, dan kebutuhan lainnya.
+            <p></p>
+            Sedangkan pendapatan diperoleh dari penjualan hasil tanaman, ternak, maupun produk olahan.
+            Jika pendapatan yang diperoleh lebih besar daripada biaya yang dikeluarkan, maka usaha
+            tersebut dapat dikatakan menguntungkan dan layak untuk dijalankan. Analisis ini penting
+            dilakukan agar petani tidak hanya menjalankan usaha berdasarkan perkiraan, tetapi sudah
+            mengetahui kemungkinan keuntungan dan risiko yang akan dihadapi.
+          </span>
+        </div>
+      </div>
+
+      <!-- SLIDE 8 -->
+      <div class="slide">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="number">
+            Pengelolaan Modal 03
+          </div>
+          <h1>
+            Strategi Pengembangan dan Pemasaran
+        </h1>
+          <h2>
+            Pengembangan Usaha dan Pemasaran Produk
+        </h2>
+          <span class="description">
+            Setelah usaha berjalan, diperlukan strategi agar usaha dapat berkembang dan hasil
+            produksinya dapat terjual dengan baik. Pengembangan usaha dapat dilakukan dengan meningkatkan
+            jumlah produksi, menambah jenis tanaman atau ternak, meningkatkan kualitas produk, dan mengolah
+            hasil pertanian menjadi produk yang memiliki nilai jual lebih tinggi. Misalnya, hasil tanaman
+            dapat diolah menjadi makanan atau hasil kotoran ternak dapat diolah menjadi pupuk kompos untuk
+            dijual.
+            <p></p>
+            Untuk pemasaran, produk dapat dijual secara langsung kepada konsumen, melalui pasar,
+            toko, koperasi, atau menggunakan media sosial dan platform jual beli online. Promosi melalui
+            media sosial dapat membantu produk dikenal oleh lebih banyak orang. Dengan pemasaran yang baik,
+            produk yang dihasilkan tidak hanya dapat terjual, tetapi juga memiliki peluang untuk mendapatkan
+            harga yang lebih tinggi.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="prev"
+      id="prevBtn"
+      aria-label="Slide sebelumnya">
+      ‹
+    </button>
+
+    <button
+      class="next"
+      id="nextBtn"
+      aria-label="Slide berikutnya">
+      ›
+    </button>
+
+    <div class="counter">
+      <strong id="currentNumber">
+        01
+      </strong>
+      /
+      <span>
+        08
+      </span>
+    </div>
+
+    <div class="dots" id="dots">
+      <button class="dot active"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+    </div>
+    <div class="progress-container">
+      <div
+        class="progress"
+        id="progress">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.getElementById("slides");
+    const slideItems =
+      document.querySelectorAll(".slide");
+    const dots =
+      document.querySelectorAll(".dot");
+    const nextBtn =
+      document.getElementById("nextBtn");
+    const prevBtn =
+      document.getElementById("prevBtn");
+    const currentNumber =
+      document.getElementById("currentNumber");
+    const progress =
+      document.getElementById("progress");
+
+    let currentSlide = 0;
+    const totalSlides =
+      slideItems.length;
+    const slideDuration = 10000;
+    let progressStart;
+    let progressAnimation;
+
+    function updateSlider() {
+      slides.style.transform =
+        `translateX(-${currentSlide * 100}vw)`;
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle(
+          "active",
+          index === currentSlide
+        );
+      });
+
+      currentNumber.textContent =
+        String(currentSlide + 1)
+        .padStart(2, "0");
+
+      const content =
+        slideItems[currentSlide]
+        .querySelector(".content");
+      content.style.animation = "none";
+      void content.offsetWidth;
+      content.style.animation =
+        "contentIn 0.50s ease";
+      startProgress();
+    }
+
+    function nextSlide() {
+      currentSlide++;
+      if (
+        currentSlide >= totalSlides
+      ) {
+        currentSlide = 0;
+      }
+      updateSlider();
+    }
+
+    function prevSlide() {
+      currentSlide--;
+      if (
+        currentSlide < 0
+      ) {
+        currentSlide =
+          totalSlides - 1;
+      }
+      updateSlider();
+    }
+
+    function goToSlide(index) {
+      if (
+        index < 0 ||
+        index >= totalSlides
+      ) {
+        return;
+      }
+      currentSlide = index;
+      updateSlider();
+    }
+    nextBtn.addEventListener(
+      "click",
+      nextSlide
+    );
+    prevBtn.addEventListener(
+      "click",
+      prevSlide
+    );
+    dots.forEach(
+      (dot, index) => {
+        dot.addEventListener(
+          "click",
+          () => {
+            goToSlide(index);
+          }
+        );
+      }
+    );
+
+    function startProgress() {
+      cancelAnimationFrame(
+        progressAnimation
+      );
+      progressStart =
+        performance.now();
+      progress.style.width =
+        "0%";
+
+      function animateProgress(
+        currentTime
+      ) {
+        const elapsed =
+          currentTime -
+          progressStart;
+        const percentage =
+          Math.min(
+            (elapsed /
+              slideDuration) *
+              150,
+            150
+          );
+        progress.style.width =
+          percentage + "%";
+        if (
+          elapsed <
+          slideDuration
+        ) {
+          progressAnimation =
+            requestAnimationFrame(
+              animateProgress
+            );
+        }
+      }
+      progressAnimation =
+        requestAnimationFrame(
+          animateProgress
+        );
+    }
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+        if (
+          event.key === "ArrowRight"
+        ) {
+          nextSlide();
+        }
+        if (
+          event.key === "ArrowLeft"
+        ) {
+          prevSlide();
+        }
+      }
+    );
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX =
+          event.changedTouches[0]
+          .screenX;
+      },
+      { passive: true }
+    );
+
+    document.addEventListener(
+      "touchend",
+      (event) => {
+        touchEndX =
+          event.changedTouches[0]
+          .screenX;
+        handleSwipe();
+      },
+      { passive: true }
+    );
+
+    function handleSwipe() {
+      const difference =
+        touchStartX -
+        touchEndX;
+      if (
+        Math.abs(difference) < 50
+      ) {
+        return;
+      }
+      if (
+        difference > 0
+      ) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+
+    updateSlider();
+    setInterval(
+      nextSlide,
+      slideDuration
+    );
+  </script>
+</body>
+</html>
