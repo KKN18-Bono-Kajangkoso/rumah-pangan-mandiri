@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pencatatan Keuangan Usaha | Rumah Pangan Mandiri</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background-shape shape-1"></div>
+    <div class="background-shape shape-2"></div>
+    <div class="background-shape shape-3"></div>
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="bi bi-leaf-fill"></i>
+            </div>
+
+            <div>
+                <h1>Rumah Pangan Mandiri</h1>
+                <p>Materi Edukasi Usaha</p>
+            </div>
+
+        </div>
+
+        <div class="slide-counter">
+            <span id="currentSlide">01</span>
+            <span class="divider">/</span>
+            <span id="totalSlides">07</span>
+        </div>
+
+    </header>
+
+    <!-- MAIN -->
+    <main class="presentation-container">
+
+        <div class="slider-wrapper">
+
+            <div class="slides">
+
+                <!-- ========================= -->
+                <!-- SLIDE 1: COVER -->
+                <!-- ========================= -->
+                <section class="slide active cover-slide">
+
+                    <div class="cover-content">
+
+                        <div class="badge">
+                            <i class="bi bi-book-fill"></i>
+                            Materi Edukasi
+                        </div>
+
+                        <h2>
+                            Pencatatan dan
+                            <span>Pengelolaan Keuangan</span>
+                            Usaha
+                        </h2>
+
+                        <p>
+                            Belajar mengelola pemasukan, pengeluaran,
+                            keuntungan, dan perkembangan usaha secara
+                            sederhana dan teratur.
+                        </p>
+
+                        <div class="cover-info">
+
+                            <div class="info-item">
+                                <i class="bi bi-cash-stack"></i>
+                                <span>Keuangan Usaha</span>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="bi bi-journal-text"></i>
+                                <span>Buku Kas Sederhana</span>
+                            </div>
+
+                        </div>
+
+                        <button class="start-btn" onclick="nextSlide()">
+                            Mulai Belajar
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="cover-illustration">
+
+                        <div class="circle-bg"></div>
+
+                        <div class="money-card card-one">
+                            <i class="bi bi-wallet2"></i>
+                            <span>Keuangan</span>
+                        </div>
+
+                        <div class="money-card card-two">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span>Usaha</span>
+                        </div>
+
+                        <div class="main-icon">
+                            <i class="bi bi-cash-coin"></i>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ========================= -->
+                <!-- SLIDE 2 -->
+                <!-- ========================= -->
+                <section class="slide">
+
+                    <div class="slide-header">
+
+                        <div class="slide-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <p class="slide-label">
+                                Pengelolaan Keuangan
+                            </p>
+
+                            <h2>
+                                Pencatatan Keuangan Sederhana
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="content-grid">
+
+                        <div class="content-text">
+
+                            <p class="main-description">
+                                Mencatat setiap pemasukan dan pengeluaran
+                                usaha secara teratur menggunakan buku kas
+                                sederhana agar seluruh transaksi
+                                terdokumentasi dengan baik.
+                            </p>
+
+                            <div class="highlight-box">
+
+                                <div class="highlight-icon">
+                                    <i class="bi bi-pencil-square"></i>
+                                </div>
+
+                                <div>
+
+                                    <h3>Kenapa Harus Dicatat?</h3>
+
+                                    <p>
+                                        Agar pemilik usaha mengetahui
+                                        setiap uang yang masuk dan keluar.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="visual-card">
+
+                            <div class="book-icon">
+                                <i class="bi bi-journal-bookmark-fill"></i>
+                            </div>
+
+                            <h3>Buku Kas Sederhana</h3>
+
+                            <div class="mini-list">
+
+                                <div>
+                                    <i class="bi bi-arrow-down-circle-fill income"></i>
+                                    Pemasukan
+                                </div>
+
+                                <div>
+                                    <i class="bi bi-arrow-up-circle-fill expense"></i>
+                                    Pengeluaran
+                                </div>
+
+                                <div>
+                                    <i class="bi bi-check-circle-fill profit"></i>
+                                    Hasil Usaha
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ========================= -->
+                <!-- SLIDE 3 -->
+                <!-- ========================= -->
+                <section class="slide">
+
+                    <div class="slide-header">
+
+                        <div class="slide-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <p class="slide-label">
+                                Analisis Usaha
+                            </p>
+
+                            <h2>
+                                Perhitungan Biaya dan Hasil Usaha
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="calculation-layout">
+
+                        <div class="calculation-card">
+
+                            <div class="calc-icon">
+                                <i class="bi bi-receipt"></i>
+                            </div>
+
+                            <h3>Total Biaya</h3>
+
+                            <p>
+                                Hitung seluruh biaya yang dikeluarkan
+                                untuk menjalankan usaha.
+                            </p>
+
+                        </div>
+
+                        <div class="calculation-symbol">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+
+                        <div class="calculation-card active-card">
+
+                            <div class="calc-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+
+                            <h3>Bandingkan dengan Hasil</h3>
+
+                            <p>
+                                Bandingkan biaya yang dikeluarkan
+                                dengan pemasukan yang diperoleh.
+                            </p>
+
+                        </div>
+
+                        <div class="calculation-symbol">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+
+                        <div class="calculation-card">
+
+                            <div class="calc-icon">
+                                <i class="bi bi-cash-stack"></i>
+                            </div>
+
+                            <h3>Ketahui Hasil</h3>
+
+                            <p>
+                                Mengetahui apakah usaha mengalami
+                                keuntungan atau kerugian.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="formula-box">
+
+                        <span>Rumus Sederhana</span>
+
+                        <h3>
+                            Pemasukan − Pengeluaran = Keuntungan / Kerugian
+                        </h3>
+
+                    </div>
+
+                </section>
+
+                <!-- ========================= -->
+                <!-- SLIDE 4 -->
+                <!-- ========================= -->
+                <section class="slide">
+
+                    <div class="slide-header">
+
+                        <div class="slide-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <p class="slide-label">
+                                Evaluasi Usaha
+                            </p>
+
+                            <h2>
+                                Penyusunan Laporan Keuangan
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <p class="main-description full-width">
+                        Merangkum modal, pemasukan, pengeluaran,
+                        dan hasil usaha sebagai bahan evaluasi untuk
+                        memantau perkembangan usaha.
+                    </p>
+
+                    <div class="report-grid">
+
+                        <div class="report-card">
+
+                            <div class="report-icon">
+                                <i class="bi bi-piggy-bank-fill"></i>
+                            </div>
+
+                            <h3>Modal</h3>
+
+                            <p>
+                                Dana awal yang digunakan untuk memulai usaha.
+                            </p>
+
+                        </div>
+
+                        <div class="report-card">
+
+                            <div class="report-icon">
+                                <i class="bi bi-arrow-down-circle-fill"></i>
+                            </div>
+
+                            <h3>Pemasukan</h3>
+
+                            <p>
+                                Uang yang diperoleh dari hasil penjualan.
+                            </p>
+
+                        </div>
+
+                        <div class="report-card">
+
+                            <div class="report-icon">
+                                <i class="bi bi-arrow-up-circle-fill"></i>
+                            </div>
+
+                            <h3>Pengeluaran</h3>
+
+                            <p>
+                                Uang yang digunakan untuk kebutuhan usaha.
+                            </p>
+
+                        </div>
+
+                        <div class="report-card">
+
+                            <div class="report-icon">
+                                <i class="bi bi-bar-chart-fill"></i>
+                            </div>
+
+                            <h3>Hasil Usaha</h3>
+
+                            <p>
+                                Mengetahui keuntungan atau kerugian usaha.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ========================= -->
+                <!-- SLIDE 5 -->
+                <!-- ========================= -->
+                <section class="slide">
+
+                    <div class="slide-header">
+
+                        <div class="slide-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <p class="slide-label">
+                                Manfaat
+                            </p>
+
+                            <h2>
+                                Manfaat Pencatatan Keuangan
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="benefit-grid">
+
+                        <div class="benefit-card">
+
+                            <span>01</span>
+
+                            <i class="bi bi-wallet2"></i>
+
+                            <h3>
+                                Mengetahui Pemasukan dan Pengeluaran
+                            </h3>
+
+                        </div>
+
+                        <div class="benefit-card">
+
+                            <span>02</span>
+
+                            <i class="bi bi-graph-up"></i>
+
+                            <h3>
+                                Mengetahui Keuntungan atau Kerugian
+                            </h3>
+
+                        </div>
+
+                        <div class="benefit-card">
+
+                            <span>03</span>
+
+                            <i class="bi bi-bar-chart-line"></i>
+
+                            <h3>
+                                Memantau Perkembangan Usaha
+                            </h3>
+
+                        </div>
+
+                        <div class="benefit-card">
+
+                            <span>04</span>
+
+                            <i class="bi bi-lightbulb-fill"></i>
+
+                            <h3>
+                                Membantu Pengambilan Keputusan
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ========================= -->
+                <!-- SLIDE 6 -->
+                <!-- ========================= -->
+                <section class="slide">
+
+                    <div class="slide-header">
+
+                        <div class="slide-number">
+                            05
+                        </div>
+
+                        <div>
+
+                            <p class="slide-label">
+                                Contoh Penerapan
+                            </p>
+
+                            <h2>
+                                Buku Kas Sederhana
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Keterangan</th>
+                                    <th>Pemasukan</th>
+                                    <th>Pengeluaran</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>1 Juli 2026</td>
+                                    <td>Modal awal</td>
+                                    <td class="income-text">Rp350.000</td>
+                                    <td>-</td>
+                                </tr>
+
+                                <tr>
+                                    <td>1 Juli 2026</td>
+                                    <td>Beli bibit lele</td>
+                                    <td>-</td>
+                                    <td class="expense-text">Rp150.000</td>
+                                </tr>
+
+                                <tr>
+                                    <td>1 Juli 2026</td>
+                                    <td>Beli benih kangkung</td>
+                                    <td>-</td>
+                                    <td class="expense-text">Rp20.000</td>
+                                </tr>
+
+                                <tr>
+                                    <td>8 Juli 2026</td>
+                                    <td>Beli pakan lele minggu 1–2</td>
+                                    <td>-</td>
+                                    <td class="expense-text">Rp80.000</td>
+                                </tr>
+
+                                <tr>
+                                    <td>22 Juli 2026</td>
+                                    <td>Beli pakan lele minggu 3–4</td>
+                                    <td>-</td>
+                                    <td class="expense-text">Rp80.000</td>
+                                </tr>
+
+                                <tr>
+                                    <td>31 Juli 2026</td>
+                                    <td>Penjualan kangkung</td>
+                                    <td class="income-text">Rp60.000</td>
+                                    <td>-</td>
+                                </tr>
+
+                                <tr>
+                                    <td>31 Juli 2026</td>
+                                    <td>Penjualan lele</td>
+                                    <td class="income-text">Rp350.000</td>
+                                    <td>-</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <!-- ========================= -->
+                <!-- SLIDE 7: RINGKASAN -->
+                <!-- ========================= -->
+                <section class="slide summary-slide">
+
+                    <div class="summary-content">
+
+                        <div class="badge">
+                            <i class="bi bi-calculator-fill"></i>
+                            Ringkasan Keuangan
+                        </div>
+
+                        <h2>
+                            Hasil Perhitungan Usaha
+                        </h2>
+
+                        <div class="finance-summary">
+
+                            <div class="summary-card">
+
+                                <i class="bi bi-piggy-bank-fill"></i>
+
+                                <span>Modal Awal</span>
+
+                                <strong>Rp350.000</strong>
+
+                            </div>
+
+                            <div class="summary-card">
+
+                                <i class="bi bi-arrow-down-circle-fill"></i>
+
+                                <span>Pemasukan</span>
+
+                                <strong>Rp410.000</strong>
+
+                            </div>
+
+                            <div class="summary-card">
+
+                                <i class="bi bi-arrow-up-circle-fill"></i>
+
+                                <span>Pengeluaran</span>
+
+                                <strong>Rp330.000</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="profit-result">
+
+                            <div class="profit-icon">
+                                <i class="bi bi-trophy-fill"></i>
+                            </div>
+
+                            <div>
+
+                                <span>Laba / Keuntungan Usaha</span>
+
+                                <h3>
+                                    Rp410.000 − Rp330.000
+                                </h3>
+
+                                <strong>
+                                    Rp80.000
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="final-balance">
+
+                            <span>Saldo Kas Akhir</span>
+
+                            <strong>Rp430.000</strong>
+
+                        </div>
+
+                        <button
+                            class="restart-btn"
+                            onclick="goToSlide(0)"
+                        >
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                            Ulangi Materi
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="progress-section">
+
+            <div class="progress-track">
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                ></div>
+            </div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="navigation">
+
+            <button
+                class="nav-btn prev-btn"
+                id="prevBtn"
+                onclick="prevSlide()"
+            >
+                <i class="bi bi-arrow-left"></i>
+                <span>Sebelumnya</span>
+            </button>
+
+            <div
+                class="dots"
+                id="dots"
+            ></div>
+
+            <button
+                class="nav-btn next-btn"
+                id="nextBtn"
+                onclick="nextSlide()"
+            >
+                <span>Selanjutnya</span>
+                <i class="bi bi-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>
+        Keunggulan & Pengelolaan Modal |
+        Sistem Pertanian Terpadu
+    </title>
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+<style>
+    /* =========================================================
+       1. RESET & BASE
+    ========================================================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background: #101713;
+        color: #ffffff;
+        overflow: hidden;
+    }
+
+
+    /* =========================================================
+       2. PRESENTATION
+    ========================================================= */
+
+    .presentation {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background: #101713;
+    }
+
+
+    /* =========================================================
+       3. HEADER
+    ========================================================= */
+
+    .top-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 90px;
+        padding: 0 7%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(5, 10, 7, 0.95),
+                rgba(5, 10, 7, 0.55),
+                transparent
+            );
+
+        z-index: 100;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .brand-icon {
+        width: 46px;
+        height: 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 14px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #7edb9f,
+                #1d6b45
+            );
+
+        font-size: 22px;
+
+        box-shadow:
+            0 10px 30px
+            rgba(0, 0, 0, 0.3);
+    }
+
+    .brand h1 {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .brand p {
+        margin-top: 2px;
+        font-size: 10px;
+
+        color:
+            rgba(255, 255, 255, 0.7);
+    }
+
+
+    /* =========================================================
+       4. SLIDE COUNTER
+    ========================================================= */
+
+    .slide-counter {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        padding: 8px 15px;
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.12);
+
+        border-radius: 50px;
+
+        background:
+            rgba(0, 0, 0, 0.28);
+
+        backdrop-filter: blur(10px);
+
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .slide-counter strong {
+        color: #ffd166;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .slide-counter span {
+        color:
+            rgba(255, 255, 255, 0.65);
+    }
+
+
+    /* =========================================================
+       5. SLIDER
+    ========================================================= */
+
+    .slider-wrapper {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .slides {
+        display: flex;
+
+        width: 100%;
+        height: 100%;
+
+        transition:
+            transform
+            0.8s
+            cubic-bezier(
+                0.77,
+                0,
+                0.175,
+                1
+            );
+
+        will-change: transform;
+    }
+
+
+    /* =========================================================
+       6. SLIDE
+    ========================================================= */
+
+    .slide {
+        position: relative;
+
+        width: 100%;
+        min-width: 100%;
+        height: 100vh;
+
+        display: flex;
+        align-items: center;
+
+        overflow: hidden;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .slide::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background:
+            radial-gradient(
+                circle at 80% 50%,
+                transparent 0%,
+                rgba(0, 0, 0, 0.1) 35%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+
+        z-index: 1;
+        pointer-events: none;
+    }
+
+
+    /* =========================================================
+       7. BACKGROUND IMAGE
+    ========================================================= */
+
+    .slide:nth-child(1) {
+        background-image: url("img/fn.jpg");
+    }
+
+    .slide:nth-child(2) {
+        background-image: url("img/kg.jpg");
+    }
+
+    .slide:nth-child(3) {
+        background-image: url("img/fn1.jpg");
+    }
+
+    .slide:nth-child(4) {
+        background-image: url("img/pr.png");
+    }
+
+    .slide:nth-child(5) {
+        background-image: url("img/pr.png");
+    }
+
+    .slide:nth-child(6) {
+        background-image: url("img/pr1.jpg");
+    }
+
+    .slide:nth-child(7) {
+        background-image: url("img/an.jpg");
+    }
+
+    .slide:nth-child(8) {
+        background-image: url("img/st.jpg");
+    }
+
+
+    /* =========================================================
+       8. OVERLAY
+    ========================================================= */
+
+    .slide::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(7, 15, 10, 0.97) 0%,
+                rgba(7, 15, 10, 0.94) 28%,
+                rgba(7, 15, 10, 0.78) 52%,
+                rgba(7, 15, 10, 0.38) 75%,
+                rgba(7, 15, 10, 0.08) 100%
+            );
+
+        z-index: 1;
+    }
+
+
+    /* =========================================================
+       9. SLIDE CONTENT
+    ========================================================= */
+
+    .content {
+        position: relative;
+        z-index: 3;
+
+        width: min(880px, 82%);
+        margin-left: 9%;
+
+        padding-top: 80px;
+        padding-bottom: 120px;
+    }
+
+
+    /* =========================================================
+       10. ANIMATION
+    ========================================================= */
+
+    .content.animate {
+        animation:
+            contentIn
+            0.7s
+            ease;
+    }
+
+    @keyframes contentIn {
+        from {
+            opacity: 0;
+            transform: translateX(-45px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+
+    /* =========================================================
+       11. NUMBER
+    ========================================================= */
+
+    .number {
+        display: inline-flex;
+        align-items: center;
+
+        padding: 7px 15px;
+
+        margin-bottom: 20px;
+
+        border-left:
+            3px solid #ffd166;
+
+        border-radius: 0 8px 8px 0;
+
+        background:
+            rgba(255, 209, 102, 0.08);
+
+        color: #ffd166;
+
+        font-size: 12px;
+        font-weight: 700;
+
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        backdrop-filter: blur(5px);
+    }
+
+
+    /* =========================================================
+       12. TITLE
+    ========================================================= */
+
+    .content h2 {
+        max-width: 850px;
+
+        font-size:
+            clamp(
+                18px,
+                5vw,
+                48px
+            );
+
+        line-height: 1.12;
+
+        margin-bottom: 18px;
+
+        font-weight: 800;
+
+        letter-spacing: -1.5px;
+
+        text-shadow:
+            0 5px 25px
+            rgba(0, 0, 0, 0.5);
+    }
+
+
+    /* =========================================================
+       13. SUBTITLE
+    ========================================================= */
+
+    .content h3 {
+        display: inline-block;
+
+        font-size:
+            clamp(
+                14px,
+                2vw,
+                18px
+            );
+
+        color: #ffd166;
+
+        font-weight: 600;
+
+        margin-bottom: 22px;
+
+        letter-spacing: 0.3px;
+    }
+
+
+    /* =========================================================
+       14. DESCRIPTION
+    ========================================================= */
+
+    .description {
+        max-width: 760px;
+
+        padding-left: 20px;
+
+        border-left:
+            1px solid
+            rgba(255, 255, 255, 0.18);
+
+        font-size: 14px;
+        line-height: 1.85;
+
+        color:
+            rgba(255, 255, 255, 0.9);
+
+        text-shadow:
+            0 2px 12px
+            rgba(0, 0, 0, 0.25);
+    }
+
+    .description p {
+        margin-bottom: 15px;
+    }
+
+    .description p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    /* =========================================================
+       15. NAVIGATION
+    ========================================================= */
+
+    .navigation {
+        position: fixed;
+
+        left: 0;
+        bottom: 42px;
+
+        width: 100%;
+        padding: 0 7%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        z-index: 100;
+    }
+
+
+    /* =========================================================
+       16. NAV BUTTON
+    ========================================================= */
+
+    .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        min-width: 130px;
+
+        padding: 11px 17px;
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.18);
+
+        border-radius: 12px;
+
+        background:
+            rgba(0, 0, 0, 0.35);
+
+        backdrop-filter: blur(12px);
+
+        color: #ffffff;
+
+        font-family: inherit;
+        font-size: 11px;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 8px 25px
+            rgba(0, 0, 0, 0.15);
+
+        transition:
+            all
+            0.3s
+            ease;
+    }
+
+    .nav-btn i {
+        font-size: 15px;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+        border-color: #ffd166;
+
+        background: #ffd166;
+        color: #1a1a1a;
+
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 10px 25px
+            rgba(255, 209, 102, 0.2);
+    }
+
+    .nav-btn:active:not(:disabled) {
+        transform: translateY(-1px);
+    }
+
+    .nav-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+    }
+
+
+    /* =========================================================
+       17. DOTS
+    ========================================================= */
+
+    .dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        max-width: 40%;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+
+        border: none;
+        border-radius: 20px;
+
+        background:
+            rgba(255, 255, 255, 0.35);
+
+        cursor: pointer;
+
+        box-shadow:
+            0 2px 8px
+            rgba(0, 0, 0, 0.2);
+
+        transition:
+            all
+            0.3s
+            ease;
+    }
+
+    .dot:hover {
+        background:
+            rgba(255, 255, 255, 0.75);
+    }
+
+    .dot.active {
+        width: 32px;
+
+        background: #ffd166;
+
+        box-shadow:
+            0 0 15px
+            rgba(255, 209, 102, 0.45);
+    }
+
+
+    /* =========================================================
+       18. PROGRESS BAR
+    ========================================================= */
+
+    .progress-section {
+        position: fixed;
+
+        left: 0;
+        bottom: 12px;
+
+        width: 100%;
+        padding: 0 7%;
+
+        z-index: 100;
+    }
+
+    .progress-track {
+        width: 100%;
+        height: 4px;
+
+        border-radius: 20px;
+
+        background:
+            rgba(255, 255, 255, 0.15);
+
+        overflow: hidden;
+
+        box-shadow:
+            inset
+            0 1px 2px
+            rgba(0, 0, 0, 0.25);
+    }
+
+    .progress-bar {
+        width: 12.5%;
+        height: 100%;
+
+        border-radius: inherit;
+
+        background:
+            linear-gradient(
+                90deg,
+                #ffd166,
+                #f4a261
+            );
+
+        box-shadow:
+            0 0 12px
+            rgba(255, 209, 102, 0.45);
+
+        transition:
+            width
+            0.5s
+            ease;
+    }
+
+
+    /* =========================================================
+       19. RESPONSIVE TABLET
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+        .top-header {
+            padding: 0 6%;
+        }
+
+        .content {
+            width: 84%;
+            margin-left: 8%;
+        }
+
+        .content h2 {
+            font-size:
+                clamp(
+                    36px,
+                    6vw,
+                    55px
+                );
+        }
+
+        .description {
+            max-width: 680px;
+
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .navigation,
+        .progress-section {
+            padding: 0 6%;
+        }
+
+        .nav-btn {
+            min-width: 115px;
+            padding: 10px 15px;
+            font-size: 10px;
+        }
+    }
+
+
+    /* =========================================================
+       20. RESPONSIVE MOBILE
+    ========================================================= */
+
+    @media (max-width: 600px) {
+
+        .top-header {
+            height: 70px;
+            padding: 0 5%;
+        }
+
+        .brand {
+            gap: 8px;
+        }
+
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+
+            font-size: 18px;
+        }
+
+        .brand h1 {
+            font-size: 11px;
+        }
+
+        .brand p {
+            font-size: 8px;
+        }
+
+        .slide-counter {
+            gap: 6px;
+            padding: 6px 11px;
+            font-size: 10px;
+        }
+
+        .slide-counter strong {
+            font-size: 17px;
+        }
+
+        .slide::before {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 15, 10, 0.94) 0%,
+                    rgba(7, 15, 10, 0.88) 50%,
+                    rgba(7, 15, 10, 0.45) 100%
+                );
+        }
+
+        .content {
+            width: 84%;
+            margin-left: 8%;
+
+            padding-top: 55px;
+            padding-bottom: 120px;
+        }
+
+        .number {
+            padding: 6px 11px;
+
+            font-size: 9px;
+
+            letter-spacing: 1.4px;
+
+            margin-bottom: 14px;
+        }
+
+        .content h2 {
+            font-size:
+                clamp(
+                    29px,
+                    9vw,
+                    42px
+                );
+
+            line-height: 1.15;
+
+            letter-spacing: -0.7px;
+
+            margin-bottom: 13px;
+        }
+
+        .content h3 {
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .description {
+            padding-left: 14px;
+
+            font-size: 11.5px;
+            line-height: 1.7;
+        }
+
+        .description p {
+            margin-bottom: 10px;
+        }
+
+
+        /* NAVIGATION */
+
+        .navigation {
+            bottom: 32px;
+
+            padding: 0 5%;
+
+            gap: 8px;
+        }
+
+        .nav-btn {
+            min-width: auto;
+
+            padding: 9px 11px;
+
+            gap: 5px;
+
+            font-size: 9px;
+
+            border-radius: 10px;
+        }
+
+        .nav-btn i {
+            font-size: 13px;
+        }
+
+
+        /* DOTS */
+
+        .dots {
+            gap: 5px;
+
+            max-width: none;
+
+            flex: 1;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+
+            flex-shrink: 0;
+        }
+
+        .dot.active {
+            width: 18px;
+        }
+
+
+        /* PROGRESS */
+
+        .progress-section {
+            bottom: 8px;
+            padding: 0 5%;
+        }
+
+        .progress-track {
+            height: 3px;
+        }
+    }
+
+
+    /* =========================================================
+       21. EXTRA SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 420px) {
+
+        .content {
+            width: 86%;
+            margin-left: 7%;
+        }
+
+        .content h2 {
+            font-size: 28px;
+        }
+
+        .content h3 {
+            font-size: 14px;
+        }
+
+        .description {
+            font-size: 10.5px;
+            line-height: 1.65;
+        }
+
+        .navigation {
+            gap: 5px;
+        }
+
+        .nav-btn {
+            padding: 9px;
+            font-size: 8px;
+        }
+
+        .dots {
+            gap: 3px;
+        }
+
+        .dot {
+            width: 5px;
+            height: 5px;
+        }
+
+        .dot.active {
+            width: 14px;
+        }
+    }
+
+
+    /* =========================================================
+       22. VERY SMALL SCREEN
+    ========================================================= */
+
+    @media (max-width: 360px) {
+
+        .nav-btn span {
+            display: none;
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+
+            padding: 0;
+        }
+
+        .nav-btn i {
+            font-size: 16px;
+        }
+
+        .dots {
+            gap: 3px;
+        }
+
+        .content h2 {
+            font-size: 26px;
+        }
+
+        .description {
+            font-size: 10px;
+        }
+    }
+
+
+    /* =========================================================
+       23. LANDSCAPE MOBILE
+    ========================================================= */
+
+    @media (max-height: 600px) and (orientation: landscape) {
+
+        .top-header {
+            height: 60px;
+        }
+
+        .content {
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+
+        .number {
+            margin-bottom: 8px;
+        }
+
+        .content h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .content h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .description p {
+            margin-bottom: 6px;
+        }
+
+        .navigation {
+            bottom: 25px;
+        }
+    }
+</style>
+</head>
+
+
+<body>
+
+    <div class="presentation">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="top-header">
+
+            <div class="brand">
+            </div>
+
+
+            <div class="slide-counter">
+
+                <strong id="currentSlide">
+                    01
+                </strong>
+
+                <span>/</span>
+
+                <span id="totalSlides">
+                    08
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             SLIDER
+        ====================================================== -->
+        <main class="slider-wrapper">
+            <div
+                class="slides"
+                id="slides"
+            >
+                <!-- SLIDE 1 -->
+                <section class="slide">
+                    <div class="content animate">
+                        <div class="number">
+                            Keunggulan 01
+                        </div>
+                        <h2>
+                            Efisiensi Biaya Melalui Pemanfaatan Limbah
+                        </h2>
+                        <h3>
+                            Sistem Pertanian Terpadu
+                        </h3>
+                        <div class="description">
+                            <p>
+                              Dapat membantu petani menghemat biaya produksi
+                              karena limbah dari suatu kegiatan dapat dimanfaatkan kembali untuk kegiatan lainnya.
+                              Sebagai contoh, kotoran ternak dapat diolah menjadi pupuk organik yang digunakan untuk
+                              menyuburkan lahan pertanian.
+                            </p>
+                            <p>
+                              Sementara itu, sisa tanaman seperti jerami, daun, atau hasil
+                              samping pertanian dapat dimanfaatkan sebagai pakan ternak setelah melalui pengolahan yang
+                              sesuai. Dengan adanya proses pemanfaatan kembali tersebut, petani tidak perlu terlalu
+                              bergantung pada pembelian pupuk, pakan, atau bahan input lainnya dari luar.                               Artinya, limbah yang sebelumnya dianggap tidak memiliki nilai
+                              ekonomi justru dapat menjadi sumber
+                              daya yang bermanfaat. Kondisi ini pada akhirnya dapat menekan biaya
+                              produksi dan meningkatkan efisiensi usaha tani.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 2 -->
+                <section class="slide">
+                    <div class="content">
+                        <div class="number">
+                            Keunggulan 02
+                        </div>
+                        <h2>
+                            Pertanian Ramah Lingkungan
+                        </h2>
+                        <h3>
+                            Pertanian Terpadu
+                        </h3>
+                        <div class="description">
+                            <p>
+            Memiliki kelebihan dari sisi lingkungan karena dapat mengurangi
+            jumlah limbah pertanian dan peternakan yang dibuang ke lingkungan.
+            Limbah berupa sisa tanaman, kotoran ternak, maupun hasil samping kegiatan
+            pertanian dapat diolah dan dimanfaatkan kembali sehingga tidak langsung menjadi
+            sumber pencemaran.
+                            </p>
+                            <p>
+            Misalnya, kotoran ternak dapat diolah menjadi kompos atau pupuk
+            organik, sedangkan sisa tanaman dapat digunakan sebagai pakan ternak atau bahan organik
+            untuk memperbaiki kondisi tanah. Dengan demikian, sistem ini menerapkan prinsip penggunaan
+            dan daur ulang sumber daya sehingga jumlah limbah yang terbuang dapat ditekan. Pemanfaatan
+            limbah secara berkelanjutan juga dapat membantu menjaga kualitas tanah dan lingkungan di
+            sekitar lahan pertanian.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 3 -->
+                <section class="slide">
+                    <div class="content">
+                        <div class="number">
+                            Keunggulan 03
+                        </div>
+                        <h2>
+                            Beragam Sumber Pendapatan
+                        </h2>
+                        <h3>
+                            Keunggulan Lainnya
+                        </h3>
+                        <div class="description">
+                            <p>
+            Petani tidak hanya bergantung pada satu jenis
+            usaha atau satu sumber pendapatan. Dalam sistem pertanian terpadu, pendapatan
+            dapat diperoleh dari berbagai komponen, seperti hasil tanaman pangan, hortikultura,
+            ternak, maupun produk olahan. Sebagai contoh, petani dapat memperoleh pendapatan dari
+            penjualan hasil panen, penjualan ternak atau produk ternak, serta penjualan produk olahan
+            seperti pupuk kompos, pakan olahan, atau makanan hasil pengolahan pertanian.
+                            </p>
+                            <p>
+            Diversifikasi tersebut penting karena kondisi pasar dan hasil produksi pertanian
+            sering mengalami perubahan. Apabila salah satu komoditas mengalami penurunan harga
+            atau produksi, petani masih memiliki sumber pendapatan lain. Dengan demikian, sistem
+            pertanian terpadu dapat membantu mengurangi risiko ekonomi sekaligus meningkatkan
+            peluang pendapatan rumah tangga petani.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 4 -->
+                <section class="slide">
+                    <div class="content">
+                        <div class="number">
+                            Keunggulan 04
+                        </div>
+                        <h2>
+                            Produksi Berkelanjutan dan Terintegrasi
+                        </h2>
+                        <h3>
+                            Produksi Dalam Sistem Pertanian Terpadu
+                        </h3>
+                        <div class="description">
+                            <p>
+            Dapat berlangsung secara
+            lebih berkelanjutan karena setiap komponen dalam usaha tani memiliki
+            hubungan dan dapat saling mendukung. Tanaman dapat menyediakan bahan pakan
+            untuk ternak, sedangkan ternak menghasilkan kotoran yang dapat dimanfaatkan
+            sebagai pupuk untuk tanaman. Hasil samping dari kegiatan pengolahan juga dapat
+            dimanfaatkan kembali sebagai input bagi kegiatan lainnya.
+                            </p>
+                            <p>
+            Hubungan tersebut menciptakan
+            suatu siklus produksi yang lebih tertutup, sehingga ketergantungan terhadap input dari
+            luar dapat dikurangi. Selain memberikan manfaat ekonomi, pola seperti ini juga membantu
+            mempertahankan produktivitas lahan dalam jangka panjang. Oleh karena itu, integrasi antara
+            tanaman dan ternak dipandang sebagai salah satu pendekatan yang dapat mendukung pertanian
+            berkelanjutan.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 5 -->
+
+                <section class="slide">
+                    <div class="content">
+                        <div class="number">
+                            Keunggulan 05
+                        </div>
+                        <h2>
+                            Efisiensi Penggunaan Sumber Daya
+                        </h2>
+                        <h3>
+                            Sistem Pertanian Terpadu
+                        </h3>
+                        <div class="description">
+                            <p>
+            Memungkinkan sumber daya yang tersedia dimanfaatkan
+            secara lebih efisien. Lahan dapat digunakan untuk berbagai kegiatan yang saling
+            berkaitan, misalnya sebagian lahan digunakan untuk tanaman pangan dan sebagian lainnya
+            untuk menyediakan hijauan pakan ternak. Air juga dapat dikelola untuk mendukung beberapa
+            kegiatan produksi secara bersamaan sesuai dengan kebutuhan dan kondisi lingkungan.
+                            </p>
+                            <p>
+            Dari sisi pakan, sisa hasil pertanian dapat dimanfaatkan sebagai bahan pakan ternak sehingga
+            mengurangi kebutuhan untuk membeli pakan dari luar. Begitu pula dengan pupuk, kotoran ternak
+            dapat dikembalikan ke lahan dalam bentuk pupuk organik. Dengan pemanfaatan sumber daya secara
+            berulang dan saling terhubung tersebut, produktivitas dapat ditingkatkan tanpa harus
+            terus-menerus menambah penggunaan sumber daya baru.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 6 -->
+                <section class="slide">
+                    <div class="content">
+                        <div class="number">
+                            Pengelolaan Modal 01
+                        </div>
+                        <h2>
+                            Perhitungan Modal Awal
+                        </h2>
+                        <h3>
+            Setiap sumber daya dapat dimanfaatkan secara optimal
+                        </h3>
+                        <div class="description">
+                            <p>
+            Sebelum memulai usaha pertanian, hal yang harus dilakukan
+            adalah menentukan modal awal yang dibutuhkan. Modal awal adalah uang
+            yang digunakan untuk membeli berbagai kebutuhan usaha, seperti bibit tanaman,
+            ternak, pakan, pupuk, obat-obatan, alat pertanian, pembuatan kandang, dan kebutuhan
+            lainnya. Besarnya modal tergantung pada jenis usaha dan skala usaha yang akan dijalankan.
+                            </p>
+                            <p>
+            Oleh karena itu, semua kebutuhan sebaiknya dihitung terlebih dahulu agar dapat diketahui
+            berapa modal yang harus disiapkan. Dalam pertanian terpadu, modal juga bisa lebih hemat
+            karena beberapa kebutuhan dapat diperoleh dari hasil usaha sendiri. Contohnya, kotoran
+            ternak dapat digunakan sebagai pupuk tanaman dan sisa tanaman dapat digunakan sebagai
+            pakan ternak. Dengan memanfaatkan sumber daya yang ada, biaya untuk membeli kebutuhan
+            dari luar dapat dikurangi.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 7 -->
+                <section class="slide">
+                    <div class="content">
+                        <div class="number">
+                            Pengelolaan Modal 02
+                        </div>
+                        <h2>
+                            Analisis Kelayakan Usaha
+                        </h2>
+                        <h3>
+                            Analisis Modal dan Pendapatan
+                        </h3>
+                        <div class="description">
+                            <p>
+            Setelah menentukan modal awal, langkah selanjutnya adalah
+            melihat apakah usaha tersebut layak untuk dijalankan atau tidak.
+            Analisis kelayakan usaha dilakukan dengan membandingkan antara biaya yang
+            dikeluarkan dengan pendapatan yang akan diperoleh. Biaya yang dikeluarkan misalnya
+            untuk membeli bibit, pakan, pupuk, obat-obatan, tenaga kerja, dan kebutuhan lainnya.
+                            </p>
+                            <p>
+            Sedangkan pendapatan diperoleh dari penjualan hasil tanaman, ternak, maupun produk olahan.
+            Jika pendapatan yang diperoleh lebih besar daripada biaya yang dikeluarkan, maka usaha
+            tersebut dapat dikatakan menguntungkan dan layak untuk dijalankan. Analisis ini penting
+            dilakukan agar petani tidak hanya menjalankan usaha berdasarkan perkiraan, tetapi sudah
+            mengetahui kemungkinan keuntungan dan risiko yang akan dihadapi.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- SLIDE 8 -->
+                <section class="slide">
+                    <div class="content">
+                        <div class="number">
+                            Pengelolaan Modal 03
+                        </div>
+                        <h2>
+                            Strategi Pengembangan dan Pemasaran
+                        </h2>
+                        <h3>
+                            Pengembangan Usaha dan Pemasaran Produk
+                        </h3>
+                        <div class="description">
+                            <p>
+            Setelah usaha berjalan, diperlukan strategi agar usaha dapat berkembang dan hasil
+            produksinya dapat terjual dengan baik. Pengembangan usaha dapat dilakukan dengan meningkatkan
+            jumlah produksi, menambah jenis tanaman atau ternak, meningkatkan kualitas produk, dan mengolah
+            hasil pertanian menjadi produk yang memiliki nilai jual lebih tinggi. Misalnya, hasil tanaman
+            dapat diolah menjadi makanan atau hasil kotoran ternak dapat diolah menjadi pupuk kompos untuk
+            dijual.
+                            </p>
+                            <p>
+            Untuk pemasaran, produk dapat dijual secara langsung kepada konsumen, melalui pasar,
+            toko, koperasi, atau menggunakan media sosial dan platform jual beli online. Promosi melalui
+            media sosial dapat membantu produk dikenal oleh lebih banyak orang. Dengan pemasaran yang baik,
+            produk yang dihasilkan tidak hanya dapat terjual, tetapi juga memiliki peluang untuk mendapatkan
+            harga yang lebih tinggi.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+
+
+        <!-- =====================================================
+             NAVIGATION
+        ====================================================== -->
+
+        <div class="navigation">
+
+            <button
+                class="nav-btn"
+                id="prevBtn"
+                aria-label="Slide sebelumnya"
+            >
+
+                <i class="bi bi-arrow-left"></i>
+
+                <span>
+                    Sebelumnya
+                </span>
+
+            </button>
+
+
+            <div
+                class="dots"
+                id="dots"
+            ></div>
+
+
+            <button
+                class="nav-btn"
+                id="nextBtn"
+                aria-label="Slide berikutnya"
+            >
+
+                <span>
+                    Selanjutnya
+                </span>
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             PROGRESS BAR
+        ====================================================== -->
+
+        <div class="progress-section">
+
+            <div class="progress-track">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* =========================================================
+           ELEMENT
+        ========================================================= */
+
+        const slidesContainer =
+            document.getElementById("slides");
+
+        const slides =
+            document.querySelectorAll(".slide");
+
+        const currentSlideElement =
+            document.getElementById("currentSlide");
+
+        const totalSlidesElement =
+            document.getElementById("totalSlides");
+
+        const progressBar =
+            document.getElementById("progressBar");
+
+        const dotsContainer =
+            document.getElementById("dots");
+
+        const prevBtn =
+            document.getElementById("prevBtn");
+
+        const nextBtn =
+            document.getElementById("nextBtn");
+
+
+        /* =========================================================
+           VARIABLE
+        ========================================================= */
+
+        let currentSlide = 0;
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        let isAnimating = false;
+
+        const totalSlides =
+            slides.length;
+
+
+        /* =========================================================
+           SET TOTAL SLIDES
+        ========================================================= */
+
+        totalSlidesElement.textContent =
+            String(totalSlides)
+                .padStart(2, "0");
+
+
+        /* =========================================================
+           CREATE DOTS
+        ========================================================= */
+
+        slides.forEach((slide, index) => {
+
+            const dot =
+                document.createElement("button");
+
+            dot.classList.add("dot");
+
+            dot.setAttribute(
+                "aria-label",
+                `Slide ${index + 1}`
+            );
+
+            if (index === 0) {
+                dot.classList.add("active");
+            }
+
+            dot.addEventListener(
+                "click",
+                () => {
+                    goToSlide(index);
+                }
+            );
+
+            dotsContainer.appendChild(dot);
+
+        });
+
+
+        /* =========================================================
+           UPDATE SLIDER
+        ========================================================= */
+
+        function updateSlider() {
+
+            /* GESER SLIDE */
+
+            slidesContainer.style.transform =
+                `translateX(-${currentSlide * 100}%)`;
+
+
+            /* COUNTER */
+
+            currentSlideElement.textContent =
+                String(currentSlide + 1)
+                    .padStart(2, "0");
+
+
+            /* PROGRESS BAR */
+
+            const progress =
+                ((currentSlide + 1) / totalSlides) * 100;
+
+            progressBar.style.width =
+                `${progress}%`;
+
+
+            /* DOTS */
+
+            const dots =
+                document.querySelectorAll(".dot");
+
+            dots.forEach((dot, index) => {
+
+                dot.classList.toggle(
+                    "active",
+                    index === currentSlide
+                );
+
+            });
+
+
+            /* PREVIOUS BUTTON */
+
+            prevBtn.disabled =
+                currentSlide === 0;
+
+
+            /* NEXT BUTTON */
+
+            if (
+                currentSlide ===
+                totalSlides - 1
+            ) {
+
+                nextBtn.disabled = true;
+
+                nextBtn
+                    .querySelector("span")
+                    .textContent =
+                    "Selesai";
+
+            } else {
+
+                nextBtn.disabled = false;
+
+                nextBtn
+                    .querySelector("span")
+                    .textContent =
+                    "Selanjutnya";
+
+            }
+
+
+            /* CONTENT ANIMATION */
+
+            slides.forEach((slide) => {
+
+                const content =
+                    slide.querySelector(".content");
+
+                content.classList.remove("animate");
+
+            });
+
+
+            const activeContent =
+                slides[currentSlide]
+                    .querySelector(".content");
+
+
+            void activeContent.offsetWidth;
+
+
+            activeContent.classList.add("animate");
+
+        }
+
+
+        /* =========================================================
+           GO TO SLIDE
+        ========================================================= */
+
+        function goToSlide(index) {
+
+            if (isAnimating) {
+                return;
+            }
+
+
+            if (
+                index < 0 ||
+                index >= totalSlides ||
+                index === currentSlide
+            ) {
+                return;
+            }
+
+
+            isAnimating = true;
+
+            currentSlide = index;
+
+            updateSlider();
+
+
+            setTimeout(() => {
+
+                isAnimating = false;
+
+            }, 800);
+
+        }
+
+
+        /* =========================================================
+           NEXT SLIDE
+        ========================================================= */
+
+        function nextSlide() {
+
+            if (isAnimating) {
+                return;
+            }
+
+
+            if (
+                currentSlide <
+                totalSlides - 1
+            ) {
+
+                goToSlide(
+                    currentSlide + 1
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           PREVIOUS SLIDE
+        ========================================================= */
+
+        function prevSlide() {
+
+            if (isAnimating) {
+                return;
+            }
+
+
+            if (
+                currentSlide > 0
+            ) {
+
+                goToSlide(
+                    currentSlide - 1
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           BUTTON EVENT
+        ========================================================= */
+
+        nextBtn.addEventListener(
+            "click",
+            nextSlide
+        );
+
+
+        prevBtn.addEventListener(
+            "click",
+            prevSlide
+        );
+
+
+        /* =========================================================
+           KEYBOARD NAVIGATION
+        ========================================================= */
+
+        document.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+                    nextSlide();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+                    prevSlide();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           SWIPE MOBILE
+        ========================================================= */
+
+        const sliderWrapper =
+            document.querySelector(
+                ".slider-wrapper"
+            );
+
+
+        sliderWrapper.addEventListener(
+            "touchstart",
+            (event) => {
+
+                touchStartX =
+                    event.changedTouches[0]
+                        .screenX;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        sliderWrapper.addEventListener(
+            "touchend",
+            (event) => {
+
+                touchEndX =
+                    event.changedTouches[0]
+                        .screenX;
+
+                handleSwipe();
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        /* =========================================================
+           HANDLE SWIPE
+        ========================================================= */
+
+        function handleSwipe() {
+
+            if (isAnimating) {
+                return;
+            }
+
+
+            const difference =
+                touchStartX -
+                touchEndX;
+
+
+            if (
+                Math.abs(difference) < 50
+            ) {
+                return;
+            }
+
+
+            /* SWIPE KIRI */
+
+            if (
+                difference > 0
+            ) {
+
+                nextSlide();
+
+            }
+
+
+            /* SWIPE KANAN */
+
+            else {
+
+                prevSlide();
+
+            }
+
+        }
+
+
+        /* =========================================================
+           INITIAL
+        ========================================================= */
+
+        updateSlider();
+
+    </script>
+
+</body>
+
+</html>
